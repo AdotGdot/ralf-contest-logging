@@ -1,0 +1,224 @@
+﻿<UserControl x:Class="Ralf.ContestLogging.Common.Views.QsoListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Ralf.ContestLogging.Common.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d"
+             d:DesignHeight="325"
+             d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".20*" />
+            <ColumnDefinition Width=".20*" />
+            <ColumnDefinition Width=".20*" />
+            <ColumnDefinition Width=".20*" />
+            <ColumnDefinition Width=".20*" />
+        </Grid.ColumnDefinitions>
+        <Button Content="&lt;&lt;"
+                Grid.Row="1"
+                Grid.Column="0"
+                IsEnabled="{Binding CanNavigateToEarliestPage}"
+                FontWeight="Bold">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding EarliestPage_Command}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding CanNavigateToEarliestPage}"
+                                     Value="True">
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Bold" />
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="Black" />
+                        </DataTrigger>
+                        <DataTrigger  Binding="{Binding CanNavigateToEarliestPage}"
+                                      Value="False">
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="LightGray" />
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Normal" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                    <Setter Property="Button.Width"
+                            Value="75" />
+                    <Setter Property="TextBlock.FontSize"
+                            Value="14" />
+                    <Setter Property="Button.Margin"
+                            Value="5" />
+                    <Setter Property="Button.Background"
+                            Value="WhiteSmoke" />
+                    <Setter Property="Button.Height"
+                            Value="25" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Content="&lt;"
+                Grid.Row="1"
+                Grid.Column="1"
+                IsEnabled="{Binding CanNavigateToPreviousPage}"
+                FontWeight="Bold">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding PreviousPage_Command}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding CanNavigateToPreviousPage}"
+                                     Value="True">
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Bold" />
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="Black" />
+                        </DataTrigger>
+                        <DataTrigger  Binding="{Binding CanNavigateToPreviousPage}"
+                                      Value="False">
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="LightGray" />
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Normal" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                    <Setter Property="Button.Width"
+                            Value="75" />
+                    <Setter Property="TextBlock.FontSize"
+                            Value="14" />
+                    <Setter Property="Button.Margin"
+                            Value="5" />
+                    <Setter Property="Button.Background"
+                            Value="WhiteSmoke" />
+                    <Setter Property="Button.Height"
+                            Value="25" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"
+                    Grid.Column="2">
+            <TextBlock Text="Page " />
+            <TextBlock Text="{Binding CurrentPage}" />
+            <TextBlock Text=" of " />
+            <TextBlock Text="{Binding PagesAvailable}" />
+            <TextBlock Text=" Pages" />
+        </StackPanel>
+        <Button Content="&gt;"
+                Grid.Row="1"
+                Grid.Column="3"
+                IsEnabled="{Binding CanNavigateToNextPage}"
+                FontWeight="Bold">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding NextPage_Command}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding CanNavigateToNextPage}"
+                                     Value="True">
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Bold" />
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="Black" />
+                        </DataTrigger>
+                        <DataTrigger  Binding="{Binding CanNavigateToNextPage}"
+                                      Value="False">
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="LightGray" />
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Normal" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                    <Setter Property="Button.Width"
+                            Value="75" />
+                    <Setter Property="TextBlock.FontSize"
+                            Value="14" />
+                    <Setter Property="Button.Margin"
+                            Value="5" />
+                    <Setter Property="Button.Background"
+                            Value="WhiteSmoke" />
+                    <Setter Property="Button.Height"
+                            Value="25" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Content="&gt;&gt;"
+                Grid.Row="1"
+                Grid.Column="4"
+                IsEnabled="{Binding CanNavigateToLatestPage}"
+                FontWeight="Bold">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding LatestPage_Command}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding CanNavigateToLatestPage}"
+                                     Value="True">
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Bold" />
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="Black" />
+                        </DataTrigger>
+                        <DataTrigger  Binding="{Binding CanNavigateToLatestPage}"
+                                      Value="False">
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="LightGray" />
+                            <Setter Property="TextBlock.FontWeight"
+                                    Value="Normal" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                    <Setter Property="Button.Width"
+                            Value="75" />
+                    <Setter Property="TextBlock.FontSize"
+                            Value="14" />
+                    <Setter Property="Button.Margin"
+                            Value="5" />
+                    <Setter Property="Button.Background"
+                            Value="WhiteSmoke" />
+                    <Setter Property="Button.Height"
+                            Value="25" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <DataGrid Grid.Row="0"
+                  Grid.ColumnSpan="5"
+                  ItemsSource="{Binding QsoList}"
+                  AutoGenerateColumns="False"
+                  GridLinesVisibility="All"
+                  IsReadOnly="True"
+                  Padding="5,5,5,5"
+                  Margin="5,5,5,5"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto"
+                  SelectionMode="Single"
+                  AlternatingRowBackground="White"
+                  RowBackground="WhiteSmoke"
+                  HeadersVisibility="Column"
+                  Background="White"
+                  x:Name="logDataGrid"
+                  FontSize="14"
+                  BorderBrush="LightBlue"
+                  BorderThickness="1">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding EditQso_Command}"
+                                           CommandParameter="{Binding SelectedItem, ElementName=logDataGrid}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+    </Grid>
+</UserControl>

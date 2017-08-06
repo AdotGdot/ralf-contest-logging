@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+    <Message>
+        <ButtonCaption>F5-ID</ButtonCaption>
+        <MessageText>N4JVP</MessageText>
+        <Tooltip>Callsign</Tooltip>
+    </Message>
+    <Message>
+        <ButtonCaption>F6-ID x 2</ButtonCaption>
+        <MessageText>N4JVP N4JVP</MessageText>
+        <Tooltip>2x Callsign</Tooltip>
+    </Message>
+    <Message>
+        <ButtonCaption>F7-RPT</ButtonCaption>
+        <MessageText>R ES TU 5NN {0} BK</MessageText>
+        <Tooltip>R ES TU 5NN BK</Tooltip>
+    </Message>
+    <Message>
+        <ButtonCaption>F8-RPT/ID</ButtonCaption>
+        <MessageText>R ES TU DE N4JVP 5NN {0} BK</MessageText>
+        <Tooltip>R ES TU DE N4JVP 5NN BK</Tooltip>
+    </Message>
+    <Message>
+        <ButtonCaption>F9-CQ TEST</ButtonCaption>
+        <MessageText>CQ TEST DE N4JVP K</MessageText>
+        <Tooltip>CQ TEST DE N4JVP K</Tooltip>
+    </Message>
+    <Message>
+        <ButtonCaption>F10-CQ TEST x 2</ButtonCaption>
+        <MessageText>CQ TEST CQ TEST DE N4JVP N4JVP K</MessageText>
+        <Tooltip>CQ TEST CQ TEST DE N4JVP N4JVP K</Tooltip>
+    </Message>
+    <Message>
+        <ButtonCaption>F11-AGN PSE</ButtonCaption>
+        <MessageText>AGN PSE DE N4JVP BK</MessageText>
+        <Tooltip><AGN PSE DE N4JVP BK/Tooltip>
+    </Message>
+    <Message>
+        <ButtonCaption>F12-73</ButtonCaption>
+        <MessageText>R TU ES 73 OM DE N4JVP SK</MessageText>
+         <Tooltip>R TU ES 73 OM DE N4JVP SK</Tooltip>
+   </Message>
+</Messages><?xml version="1.0" encoding="utf-8"?>
+<Messages>
+    <Message>
+        <ButtonCaption>F5-ID</ButtonCaption>
+        <MessageText>N4JVP</MessageText>
+    </Message>
+    <Message>
+        <ButtonCaption>F6-ID x 2</ButtonCaption>
+        <MessageText>N4JVP N4JVP</MessageText>
+    </Message>
+    <Message>
+        <ButtonCaption>F7-RPT</ButtonCaption>
+        <MessageText>R ES TU 5NN {0} BK</MessageText>
+    </Message>
+    <Message>
+        <ButtonCaption>F8-RPT/ID</ButtonCaption>
+        <MessageText>R ES TU DE N4JVP 5NN {0} BK</MessageText>
+    </Message>
+    <Message>
+        <ButtonCaption>F9-CQ TEST</ButtonCaption>
+        <MessageText>CQ TEST DE N4JVP K</MessageText>
+    </Message>
+    <Message>
+        <ButtonCaption>F10-CQ TEST x 2</ButtonCaption>
+        <MessageText>CQ TEST CQ TEST DE N4JVP N4JVP K</MessageText>
+    </Message>
+    <Message>
+        <ButtonCaption>F11-AGN PSE</ButtonCaption>
+        <MessageText>AGN PSE DE N4JVP BK</MessageText>
+    </Message>
+    <Message>
+        <ButtonCaption>F12-73</ButtonCaption>
+        <MessageText>R TU ES 73 OM DE N4JVP SK</MessageText>
+    </Message>
+</Messages>

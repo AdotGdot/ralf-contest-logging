@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Ralf.ContestLogging.Common.Views.ShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Ralf.ContestLogging.Common.Views"
+             xmlns:prism="http://www.codeplex.com/prism"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <ItemsControl Name="KeyerControlRegion"
+                      prism:RegionManager.RegionName="KeyerControlRegion"
+                      Visibility="{Binding KeyerControlVisibility}"
+                      Grid.Row="0"
+                      Grid.Column="1" />
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <ItemsControl Name="TransceiverControlRegion"
+                          prism:RegionManager.RegionName="TransceiverControlRegion"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center" />
+            <ItemsControl Name="DupeCheckRegion"
+                          prism:RegionManager.RegionName="DupeCheckRegion"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          Margin="50,0,50,0" />
+            <ItemsControl Name="SummaryRegionRegion"
+                          prism:RegionManager.RegionName="SummaryRegion"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center" />
+        </StackPanel>
+
+        <ItemsControl Name="MultiviewControlRegion"
+                      prism:RegionManager.RegionName="MultiviewControlRegion"
+                      Grid.Row="2"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="5"></ItemsControl>
+    </Grid>
+</UserControl>

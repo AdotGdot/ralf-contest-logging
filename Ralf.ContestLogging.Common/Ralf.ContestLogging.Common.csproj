@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4BA1230-6C32-41E4-83E5-ECA683ED85B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ralf.ContestLogging.Common</RootNamespace>
+    <AssemblyName>Ralf.ContestLogging.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Binaries\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Binaries\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Unity.6.2.0\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BehaviorServices\BaseDxccBehaviorService.cs" />
+    <Compile Include="BehaviorServices\CqDxccSelectionBehaviorService.cs" />
+    <Compile Include="BehaviorServices\DxccSelectionBehaviorService.cs" />
+    <Compile Include="BehaviorServices\ItuDxccSelectionBehaviorService.cs" />
+    <Compile Include="BindingServices\CqDxccSelectionColumnBindingsService.cs" />
+    <Compile Include="BindingServices\DxccSelectionColumnBindingsService.cs" />
+    <Compile Include="BindingServices\ItuDxccSelectionColumnBindingsService.cs" />
+    <Compile Include="Enumerations\Band.cs" />
+    <Compile Include="Enumerations\Mode.cs" />
+    <Compile Include="Enumerations\QsoType.cs" />
+    <Compile Include="Enumerations\TransceiverMode.cs" />
+    <Compile Include="Interfaces\IDupeBehaviorsService.cs" />
+    <Compile Include="Interfaces\IDupeListColumnBindingsService.cs" />
+    <Compile Include="Interfaces\IDxccSelectionBehaviorService.cs" />
+    <Compile Include="Interfaces\IDxccSelectionColumnBindingsService.cs" />
+    <Compile Include="Interfaces\IDxResolutionRepository.cs" />
+    <Compile Include="Interfaces\IDxResolutionService.cs" />
+    <Compile Include="Interfaces\ILogGridColumnBindingsService.cs" />
+    <Compile Include="Interfaces\ILogRepository.cs" />
+    <Compile Include="Interfaces\ILogService.cs" />
+    <Compile Include="Interfaces\ILogWebService.cs" />
+    <Compile Include="Interfaces\IQsoDetailPopupService.cs" />
+    <Compile Include="Interfaces\IScratchPadMemoryPopupService.cs" />
+    <Compile Include="Interfaces\ITransceiver.cs" />
+    <Compile Include="Interfaces\IUSCallsignLookupRepository.cs" />
+    <Compile Include="Interfaces\IUSCallsignLookupService.cs" />
+    <Compile Include="Messaging\DataDictionaryMessages.cs" />
+    <Compile Include="Messaging\LoggingMessages.cs" />
+    <Compile Include="Messaging\MessageSink.cs" />
+    <Compile Include="Messaging\ShellNotificationMessages.cs" />
+    <Compile Include="Messaging\TransceiverMessages.cs" />
+    <Compile Include="Models\IBaseViewModel.cs" />
+    <Compile Include="Models\IDupeCheckViewModel.cs" />
+    <Compile Include="Models\IDxccSelectionViewModel.cs" />
+    <Compile Include="Models\IMultiviewViewModel.cs" />
+    <Compile Include="Models\IQsoDetailViewModel.cs" />
+    <Compile Include="Models\IQsoListViewModel.cs" />
+    <Compile Include="Models\IShellViewModel.cs" />
+    <Compile Include="Models\IStatisticsViewModel.cs" />
+    <Compile Include="Models\ISummaryViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DxResolutionService.cs" />
+    <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\USCallsignLookupService.cs" />
+    <Compile Include="Types\AggregateModuleCatalog.cs" />
+    <Compile Include="Types\CallsignData.cs" />
+    <Compile Include="Types\ContinentDetail.cs" />
+    <Compile Include="Types\ContinentFactory.cs" />
+    <Compile Include="Types\DataDictionary.cs" />
+    <Compile Include="Types\DataGridColumnWriter.cs" />
+    <Compile Include="Types\Delegates.cs" />
+    <Compile Include="Types\DxccEntity.cs" />
+    <Compile Include="Types\DxccEntitySelection.cs" />
+    <Compile Include="Types\MexicanState.cs" />
+    <Compile Include="Types\MexicanStateList.cs" />
+    <Compile Include="Types\MexicanStateListBuilder.cs" />
+    <Compile Include="Types\Qso.cs" />
+    <Compile Include="Types\Section.cs" />
+    <Compile Include="Types\SectionList.cs" />
+    <Compile Include="Types\SectionListBuilder.cs" />
+    <Compile Include="Types\TransceiverData.cs" />
+    <Compile Include="Types\TransceiverState.cs" />
+    <Compile Include="Types\Zone.cs" />
+    <Compile Include="Types\ZoneDetail.cs" />
+    <Compile Include="Types\ZoneList.cs" />
+    <Compile Include="Types\ZoneListBuilder.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DupeCheckViewModel.cs" />
+    <Compile Include="ViewModels\DxccSelectionViewModel.cs" />
+    <Compile Include="ViewModels\MultiviewViewModel.cs" />
+    <Compile Include="ViewModels\QsoDetailViewModel.cs" />
+    <Compile Include="ViewModels\QsoListViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\StatisticsViewModel.cs" />
+    <Compile Include="ViewModels\SummaryViewModel.cs" />
+    <Compile Include="Views\DupeCheckView.xaml.cs">
+      <DependentUpon>DupeCheckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DxccSelectionView.xaml.cs">
+      <DependentUpon>DxccSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MultiviewView.xaml.cs">
+      <DependentUpon>MultiviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QsoListView.xaml.cs">
+      <DependentUpon>QsoListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\DupeCheckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DxccSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MultiviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QsoListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

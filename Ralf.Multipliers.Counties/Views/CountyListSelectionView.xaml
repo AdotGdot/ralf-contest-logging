@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Ralf.Multipliers.Counties.Views.CountyListSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Ralf.Multipliers.Counties.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="{Binding Title}" />
+        <ListBox ItemsSource="{Binding CountyList}"
+                 FontSize="14"
+                 BorderBrush="LightBlue"
+                 BorderThickness="1"
+                 Name="countyListBox">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="{Binding ColumnCount}"
+                                 VerticalAlignment="Top" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Abbr}" />
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Worked}"
+                                     Value="False">
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="Red"></Setter>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseUp">
+                    <i:InvokeCommandAction Command="{Binding CountySelected_Command}"
+                                       CommandParameter="{Binding SelectedItem, ElementName=countyListBox}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ListBox>
+    </StackPanel>
+</UserControl>
